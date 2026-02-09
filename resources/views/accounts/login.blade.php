@@ -6,7 +6,7 @@
     <title>Вход</title>
 
     <!-- CSS -->
-    @vite("resources/css/authentication/register.css")
+    @vite("resources/css/accounts/login.css")
 
     <!-- CSS BootStrap -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
@@ -19,7 +19,6 @@
         <center>
             <div class="wrapper">
                 
-                
                 <form class="form-floating">
                     <h1 style="margin-top: 1rem; font-size: 35px;">Электронный дневник</h1>
                     <p>Вход</p>
@@ -29,7 +28,7 @@
 
                     <p><a href="#" style="text-decoration: none;">Забыли данные?</a></p>
                     
-                    <button type="submit" class="btn_login">Войти</button>
+                    <button type="submit">Войти</button>
                 </form>
             </div>
         </center>

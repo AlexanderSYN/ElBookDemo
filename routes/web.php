@@ -2,16 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 
-//=======================
-// Authentication
-//=======================
+// 
+// RegisterController
+//
+use App\Http\Controllers\accounts\RegisterController;
+
+//================================
+// вход
+//================================
 Route::get('/', function () {
-    return view('authentication/login');
+    return view('accounts.login');
 });
 
-Route::get('/register_student', function() {
-    return view('authentication/register_student');
-});
-//=======================
-// End Authentication
-//=======================
+//==========================================
+// регистрация
+//==========================================
+Route::get('/register', [RegisterController::class, 'register'])->middleware('guest')->name('register');
+

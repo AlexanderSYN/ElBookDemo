@@ -15,17 +15,17 @@ body .wrapper {
   backdrop-filter: blur(20px);
   background: rgba(242, 242, 242, 0.7);
   width: 419px;
-  height: 590px;
+  height: 365px;
   background: white;
   display: -ms-grid;
   display: grid;
-  margin-top: 10rem;
+  margin-top: 14rem;
   -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border: 1px rgba(0, 0, 0, 0.2) solid;
 }
-body input {
+body .wrapper input {
   width: 85%;
   outline: none;
   border: none;
@@ -34,13 +34,13 @@ body input {
   margin-bottom: 20px;
   border-radius: 10px;
 }
-body input:focus {
+body .wrapper input:focus {
   outline: none;
   border: 2px solid #4c51af;
   -webkit-box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
           box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
-body .btn_register {
+body .wrapper button {
   cursor: pointer;
   font-size: 1.1rem;
   margin-top: 0.5rem;
@@ -56,6 +56,6 @@ body .btn_register {
   border-radius: 8px;
   border: 1px rgba(0, 0, 0, 0.2) solid;
 }
-body .btn_register:hover {
+body .wrapper button:hover {
   background: red;
 }

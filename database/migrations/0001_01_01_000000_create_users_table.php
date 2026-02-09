@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->INTEGER('group');
             $table->string('role');
+            $table->boolean('false');
             $table->rememberToken();
             $table->timestamps();
         });
