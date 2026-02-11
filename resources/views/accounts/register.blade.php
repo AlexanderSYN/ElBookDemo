@@ -18,7 +18,7 @@
     <main>
         <center>
             <div class="wrapper">
-                <form class="form-floating" method="POST" action="registered">
+                <form class="form-floating" method="POST" action="{{ route('accounts.register.registered') }}">
                     <h1 style="margin-top: 1rem;margin-bottom: 2rem; font-size: 35px;">Регистрация</h1>
 
                     <input type="text" name="name" placeholder="Введите Имя" style="margin-bottom: 1rem;" />

@@ -8,14 +8,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\accounts\RegisterController;
 
 //================================
-// вход
+// главная страница
 //================================
 Route::get('/', function () {
     return view('accounts.login');
 });
 
-//==========================================
-// регистрация
-//==========================================
-Route::get('/register', [RegisterController::class, 'register'])->middleware('guest')->name('register');
 
+
+
+Route::prefix("accounts")->as('accounts.')->group(function() {
+    //================================
+    // вход
+    //================================
+    Route::get('/login', function () {return view('accounts.login');});
+
+    //==========================================
+    // регистрация
+    //==========================================
+    Route::get('/register', [RegisterController::class, 'register'])->name('register');
+    Route::post('/register/registered', [RegisterController::class, 'register'])->name('register.registered');
+});
