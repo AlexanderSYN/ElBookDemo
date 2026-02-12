@@ -7,18 +7,18 @@ body {
         position: fixed;
         inset: 0;
 
-        background-image: url('../../../public/img/bg_login.jpg'); 
+        background-image: url('../../../public/img/bg_login.jpg');
         filter: blur(1.9px);
         z-index: -1;
     }
-    
+
 
     .wrapper {
         backdrop-filter: blur(20px);
         background: rgba(242, 242, 242, 0.7);
-        width: 419px; 
-        height: 365px; 
-        background: white; 
+        width: 419px;
+        height: 365px;
+        background: white;
         display: grid;
         margin-top: 14rem;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -60,10 +60,5 @@ body {
             }
         }
     }
-
-    
-
-    
-
 }
 

@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Controllers\Accounts;
+
+use App\Http\Controllers\Accounts\helper\Helper_register;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+use Exception;
+
+class LoginController extends Controller
+{
+    // переход на страницу регистрации
+    public function login() {
+        return view('accounts.login');
+    }
+
+    // регистрация
+    public function log_in(Request $req) {
+        $credentials = $req->validate([
+            'login' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+
+        return redirect()->route('profile.admin_profile');
+
+    }
+}
