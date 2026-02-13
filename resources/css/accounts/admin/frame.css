@@ -1,0 +1,7 @@
+.frame_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border: none;
+}
