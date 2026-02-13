@@ -3,11 +3,16 @@
 use Illuminate\Support\Facades\Route;
 
 //
-// RegisterController
+// Auth Controller
 //
 use App\Http\Controllers\Accounts\RegisterController;
 use App\Http\Controllers\Accounts\ProfileController;
 use App\Http\Controllers\Accounts\LoginController;
+
+//
+// Admin
+//
+use App\Http\Controllers\Accounts\admin\AdminController;
 
 //================================
 // главная страница
@@ -36,4 +41,11 @@ Route::prefix("profile")->as('profile.')->group(function () {
     // профиль админа
     //
     Route::get('/admin', [ProfileController::class, 'profile_admin'])->name('admin_profile');
+    Route::get('/admin/students', [AdminController::class, 'show_all_students'])->name('show_all_students');
+
+    //
+    // для шаблонов админа
+    //
+    Route::get('/admin/menu', [AdminController::class, 'menu'])->name('menu_admin');
+
 });

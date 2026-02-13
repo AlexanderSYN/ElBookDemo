@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,14 @@
 
             <form class="form-floating" method="post" action="{{ route('accounts.login') }}">
                 @csrf
+                <ul>
+                    @foreach($errors->all() as $msg)
+                        <div class="notice error">
+                            {{ $msg }}
+                        </div>
+                    @endforeach
+                </ul>
+
                 <h1 style="margin-top: 1rem; font-size: 35px;">Электронный дневник</h1>
                 <p>Вход</p>
 

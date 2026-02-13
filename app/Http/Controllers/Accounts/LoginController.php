@@ -19,14 +19,19 @@ class LoginController extends Controller
     }
 
     // регистрация
-    public function log_in(Request $req) {
-        $credentials = $req->validate([
+    public function log_in(Request $request) {
+
+        $credentials = $request->validate([
             'login' => 'required|string',
             'password' => 'required|string'
         ]);
 
-
-        return redirect()->route('profile.admin_profile');
+        if (!Auth::attempt($credentials)) {
+            return redirect()->route('accounts.login')
+                ->withInput()->withErrors("Логин или пароль неверный");
+        } else {
+            return redirect()->route('profile.admin_profile');
+        }
 
     }
 }

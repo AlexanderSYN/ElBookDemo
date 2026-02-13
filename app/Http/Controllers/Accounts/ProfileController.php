@@ -8,4 +8,9 @@ class ProfileController
     public function profile_admin() {
         return view('accounts.profile.admin.profile_admin');
     }
+
+    public function menu()
+    {
+        return view('accounts.profile.admin.frames_for_profile_admin.menu');
+    }
 }
