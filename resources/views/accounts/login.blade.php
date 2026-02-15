@@ -18,6 +18,7 @@
 <main>
     <center>
         <div class="wrapper">
+            
 
             <form class="form-floating" method="post" action="{{ route('accounts.login') }}">
                 @csrf

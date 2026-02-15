@@ -27,8 +27,9 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><button class="dropdown-item" onclick="parent.location.href='{{ route('profile.show_all_students') }}'">просмотр</button></li>
+            <li><a class="dropdown-item" onclick="parent.location.href='{{ route('profile.add_students') }}'">добавить</a></li>
             <li><a class="dropdown-item" href="#">изменить</a></li>
-            <li><a class="dropdown-item" href="#">добавить</a></li>
+            <li><a class="dropdown-item" href="#">удалить</a></li>
         </ul>
     </div>
 </main>

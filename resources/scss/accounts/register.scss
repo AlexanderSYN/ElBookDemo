@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    position: relative;
-
+    
     &::before {
         content: "";
         position: fixed;
@@ -16,16 +15,15 @@ body {
         backdrop-filter: blur(20px);
         background: rgba(242, 242, 242, 0.7);
         width: 419px;
-        height: 660px;
+        height: auto;
         background: white;
         display: grid;
         margin-top: 7rem;
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         border-radius: 8px;
         border: 1px rgba(0, 0, 0, 0.20) solid;
-    }
 
-    input {
+        input {
         width: 85%;
         outline: none;
         border: none;
@@ -59,6 +57,31 @@ body {
             background: red;
         }
     }
+
+        //-----------------------
+        // for messages
+        //-----------------------
+        .notice {
+            margin: 20px 0px;
+            border-radius: 18px;
+            padding: 10px;
+            margin-left: -2rem;
+
+            &.error {
+                border: 2px solid #f3d3d3;
+                color: #762c2c;
+                background: #f3d3d3;
+
+            }
+            &.success {
+                background: #e1fee3;
+                border: 2px solid #2c742b;
+                color: #2c742b;
+            }
+        }
+    }
+
+    
 
 }
 

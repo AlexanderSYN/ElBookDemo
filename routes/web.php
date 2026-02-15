@@ -29,19 +29,20 @@ Route::prefix("accounts")->as('accounts.')->group(function() {
     Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login', [LoginController::class, 'log_in']);
 
-    //==========================================
-    // регистрация
-    //==========================================
-    Route::get('/register', [RegisterController::class, 'register'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store']);
 });
 
 Route::prefix("profile")->as('profile.')->group(function () {
     //
     // профиль админа
     //
+    // главная страница админа
     Route::get('/admin', [ProfileController::class, 'profile_admin'])->name('admin_profile');
+    // страница всех пользователей
     Route::get('/admin/students', [AdminController::class, 'show_all_students'])->name('show_all_students');
+    // страница добавление студента
+    Route::get('/admin/add_students', [AdminController::class, 'add_students'])->name('add_students');
+    Route::post('/admin/add_students', [AdminController::class, 'add_students_to_bd'])->name('add_stud_bd');
+
 
     //
     // для шаблонов админа
