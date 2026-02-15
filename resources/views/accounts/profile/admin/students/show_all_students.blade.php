@@ -37,8 +37,8 @@
                 </tr>
             </thead>
            <tbody>
-           @foreach($students as $student)
-               <tr>
+            @foreach($students as $student)
+                <tr onclick="window.location='{{ route('profile.show_about_student', ['id' => $student->id]) }}'" style="cursor: pointer;">
                    <th scope="col"><?= $student->id ?></th>
                    <th scope="col"><?= $student->name ?></th>
                    <th scope="col"><?= $student->surname ?></th>
@@ -46,7 +46,7 @@
                    <th scope="col"><?= $student->group ?></th>
                    <th scope="col"><?= $student->role ?></th>
                </tr>
-           @endforeach
+            @endforeach
            </tbody>
         </table>
     </main>

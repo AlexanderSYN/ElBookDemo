@@ -1,0 +1,60 @@
+$bg_wrapper: rgba(242, 242, 242, 0.7);
+$wrapper_box_shadow: rgba(0,0,0,0.2);
+$wrapper_border: rgba(0, 0, 0, 0.20);
+$bg_input: #e7eaed;
+$bg_input_focus: #4c51af;
+$bg_input_border_focus: #4c51af;
+$bg_input_box_shadow_focus: rgba(76, 175, 80, 0.5);
+$label_color: rgba(var(--bs-body-color-rgb),.65);
+
+body {
+    margin: 0;
+    
+    &::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+
+
+        background-image: url('../../../public/img/bg_login.jpg');
+        filter: blur(1.9px);
+        z-index: -1;
+    }
+
+
+    .wrapper {
+        backdrop-filter: blur(20px);
+        background: $bg_wrapper;
+        width: 419px;
+        height: auto;
+        background: white;
+        display: grid;
+        margin-top: 7rem;
+        box-shadow: 0 4px 15px $wrapper_box_shadow;
+        border-radius: 8px;
+        border: 1px $wrapper_border solid;
+
+
+        .wrapper_input {
+            input {
+                width: 85%;
+                outline: none;
+                border: none;
+                background: $bg_input;
+                padding: 14px 14px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+
+                &:focus {
+                    outline: none;
+                    border: 2px solid $bg_input_focus;
+                    box-shadow: 0 0 5px $bg_input_box_shadow_focus;
+                }
+            }
+
+      
+   
+        }
+    }
+
+}

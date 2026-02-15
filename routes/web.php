@@ -39,6 +39,9 @@ Route::prefix("profile")->as('profile.')->group(function () {
     Route::get('/admin', [ProfileController::class, 'profile_admin'])->name('admin_profile');
     // страница всех пользователей
     Route::get('/admin/students', [AdminController::class, 'show_all_students'])->name('show_all_students');
+    // страница просмотра полной информации о студенте
+    Route::get('/admin/students/{id}', [AdminController::class, 'show_about_student'])->name('show_about_student')->whereNumber('id');
+
     // страница добавление студента
     Route::get('/admin/add_students', [AdminController::class, 'add_students'])->name('add_students');
     Route::post('/admin/add_students', [AdminController::class, 'add_students_to_bd'])->name('add_stud_bd');

@@ -41,7 +41,7 @@
                     @endif
                 </ul>
 
-                <h1 style="margin-top: 1rem;margin-bottom: 2rem; font-size: 35px;">Регистрация</h1>
+                <h1 style="margin-top: 1rem;margin-bottom: 2rem; font-size: 35px;">Добавление студента</h1>
                 <!-- SNP - это ФИО -->
                 <input type="text" name="SNP" placeholder="Введите ФИО" style="margin-bottom: 1rem;" />
                 <input type="text" name="email" placeholder="Введите email" style="margin-bottom: 1rem;" />
@@ -51,7 +51,7 @@
                 <input type="text" name="group" placeholder="Введите группа" />
                 <input type="text" name="role" placeholder="Введите роль" />
 
-                <button type="submit" class="btn_register">Зарегистрироваться</button>
+                <button type="submit" class="btn_register">Зарегистрировать</button>
             </form>
         </div>
     </center>

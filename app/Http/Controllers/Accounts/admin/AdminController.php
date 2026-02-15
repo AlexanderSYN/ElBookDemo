@@ -35,6 +35,21 @@ class AdminController
         return view('accounts.profile.admin.students.show_all_students', ['students' => $students]);
     }
 
+     //
+    // полная информация о студента
+    //
+    public function show_about_student($id)
+    {
+        try {
+            $student = DB::table('users')->where('id', $id)->get();
+
+            return view('accounts.profile.admin.students.about_student', ['student' => $student]);
+        } catch (Exception $e) {
+            //abort(500);
+            echo $e;
+        }
+    }
+
     //================================================
     // страница добавление пользователей 
     //================================================
@@ -80,7 +95,8 @@ class AdminController
             echo $e;
         
         }
-
-
     }
+
+   
+        
 }
