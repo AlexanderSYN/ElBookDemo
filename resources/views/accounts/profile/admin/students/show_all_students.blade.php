@@ -20,7 +20,7 @@
 </head>
 <body>
     <main>
-        <iframe src="{{ route('profile.menu_admin') }}"
+        <iframe src="{{ route('profile.admin.menu_admin') }}"
                 class="frame_menu"
                 frameborder="0"
         ></iframe>
@@ -38,7 +38,7 @@
             </thead>
            <tbody>
             @foreach($students as $student)
-                <tr onclick="window.location='{{ route('profile.show_about_student', ['id' => $student->id]) }}'" style="cursor: pointer;">
+                <tr onclick="window.location='{{ route('profile.admin.show_about_student', ['id' => $student->id]) }}'" style="cursor: pointer;">
                    <th scope="col"><?= $student->id ?></th>
                    <th scope="col"><?= $student->name ?></th>
                    <th scope="col"><?= $student->surname ?></th>

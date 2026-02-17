@@ -14,7 +14,7 @@
 
     <main>
 
-        <iframe src="{{ route('profile.menu_admin') }}"
+        <iframe src="{{ route('profile.admin.menu_admin') }}"
                 class="frame_menu"
                 frameborder="0"
         ></iframe>

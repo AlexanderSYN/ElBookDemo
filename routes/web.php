@@ -32,24 +32,31 @@ Route::prefix("accounts")->as('accounts.')->group(function() {
 });
 
 Route::prefix("profile")->as('profile.')->group(function () {
-    //
-    // профиль админа
-    //
-    // главная страница админа
-    Route::get('/admin', [ProfileController::class, 'profile_admin'])->name('admin_profile');
-    // страница всех пользователей
-    Route::get('/admin/students', [AdminController::class, 'show_all_students'])->name('show_all_students');
-    // страница просмотра полной информации о студенте
-    Route::get('/admin/students/{id}', [AdminController::class, 'show_about_student'])->name('show_about_student')->whereNumber('id');
+    Route::prefix("admin")->as('admin.')->group(function() {
+        //===========================================
+        // профиль админа
+        //===========================================
+        // главная страница админа
+        Route::get('/', [ProfileController::class, 'profile_admin'])->name('admin_profile');
+        // страница всех пользователей
+        Route::get('/students', [AdminController::class, 'show_all_students'])->name('show_all_students');
+        // страница просмотра полной информации о студенте
+        Route::get('/students/{id}', [AdminController::class, 'show_about_student'])->name('show_about_student')->whereNumber('id');
 
-    // страница добавление студента
-    Route::get('/admin/add_students', [AdminController::class, 'add_students'])->name('add_students');
-    Route::post('/admin/add_students', [AdminController::class, 'add_students_to_bd'])->name('add_stud_bd');
+        // страница добавление студента
+        Route::get('/add_students', [AdminController::class, 'add_students'])->name('add_students');
+        Route::post('/add_students', [AdminController::class, 'add_students_to_bd'])->name('add_stud_bd');
+
+        // страница изменение студента
+        Route::get('/edit_students/{id}', [AdminController::class, 'redirect_to_edit_student'])->name('redirect_to_edit_student')->whereNumber('id');
+
+        //
+        // для шаблонов админа
+        //
+        Route::get('/menu', [AdminController::class, 'menu'])->name('menu_admin');
+    });
 
 
-    //
-    // для шаблонов админа
-    //
-    Route::get('/admin/menu', [AdminController::class, 'menu'])->name('menu_admin');
+    
 
 });

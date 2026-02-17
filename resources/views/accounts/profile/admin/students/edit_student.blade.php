@@ -42,32 +42,35 @@
                 <div class="wrapper_input">
                     <h1 style="margin-top: 1rem; margin-bottom: 2rem; font-size: 40px; font-weight: bold;">О СТУДЕНТЕ</h1>
                     <!-- SNP - это ФИО -->
-                    <label for="SNP">ФИО:</label>
-                    <input type="text" name="SNP" style="margin-bottom: 1rem;" placeholder="<?= $student->name ?> <?= $student->surname ?> <?= $student->patronymic ?>" disabled />
+                    @foreach ($student as $stud)
+                         <label for="SNP">ФИО:</label>
+                        <input type="text" name="SNP" style="margin-bottom: 1rem;" value="<?= $stud->name ?> <?= $stud->surname ?> <?= $stud->patronymic ?>" />
                         
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" style="margin-bottom: 1rem;" placeholder="<?= $student->email ?>" disabled />
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" style="margin-bottom: 1rem;" value="<?= $stud->email ?>" />
                         
-                    <label for="number">номер:</label>
-                    <input type="text" name="number" style="margin-bottom: 1rem;" placeholder="<?= $student->number ?>" disabled/>
+                        <label for="number">номер:</label>
+                        <input type="text" name="number" style="margin-bottom: 1rem;" value="<?= $stud->number ?>" />
 
-                    <label for="login">логин:</label>
-                    <input type="text" name="login" style="margin-bottom: 1rem;" placeholder="<?= $student->login ?>" disabled />
+                        <label for="login">логин:</label>
+                        <input type="text" name="login" style="margin-bottom: 1rem;" value="<?= $stud->login ?>" />
                         
-                    <label for="pass">пароль:</label>
-                    <input type="password" name="password" placeholder="Пароль засекречен" disabled />
+                        <label for="pass">пароль:</label>
+                        <input type="text" name="password" value="Пароль засекречен" disabled />
 
-                    <label for="pass">пароль:</label>
-                    <input type="text" name="group" placeholder="<?= $student->group ?>" disabled />
+                        <label for="pass">пароль:</label>
+                        <input type="text" name="group" value="<?= $stud->group ?>" />
 
-                    <label for="role">роль:</label>
-                    <input type="text" name="role" placeholder="<?= $student->role ?>" disabled  />
+                        <label for="role">роль:</label>
+                        <input type="text" name="role" value="<?= $stud->role ?>"  />
 
-                    <label for="isBan">бан?:</label>                
-                    <input type="text" name="isBan"
-                    placeholder="<?= $student->isBan ?>" disabled  />
+                        <label for="isBan">бан?:</label>                
+                        <input type="text" name="isBan" value="<?= $stud->isBan ?>"  />
 
-                    <button onclick="window.location='{{ route('profile.admin.redirect_to_edit_student', ['id' => $student->id]) }}'" type="submit" class="btn">?Изменить?</button>
+                        <button href="{{ route('profile.admin.redirect_to_edit_student', ['id' => $stud->id]) }}" 
+                            type="submit" class="btn">Изменить</button>
+                    
+                    @endforeach
                 </div>
 
         </div>

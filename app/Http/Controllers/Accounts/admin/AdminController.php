@@ -35,13 +35,13 @@ class AdminController
         return view('accounts.profile.admin.students.show_all_students', ['students' => $students]);
     }
 
-     //
+    //
     // полная информация о студента
     //
     public function show_about_student($id)
     {
         try {
-            $student = DB::table('users')->where('id', $id)->get();
+            $student = User::where('id', $id)->first();
 
             return view('accounts.profile.admin.students.about_student', ['student' => $student]);
         } catch (Exception $e) {
@@ -97,6 +97,19 @@ class AdminController
         }
     }
 
+    //===========================================
+    // изменение студента
+    //===========================================
+    public function redirect_to_edit_student($id)
+    {
+        try {
+            $student = User::where('id', $id)->first();
+
+            return view('accounts.profile.admin.students.edit_student', ['student' => $student]);
+        } catch (Exception $e) {
+            echo $e;
+        }
+    }
    
         
 }

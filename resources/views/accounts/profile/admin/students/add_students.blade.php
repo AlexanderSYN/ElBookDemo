@@ -19,13 +19,13 @@
 </head>
 <body style="">
 <main>
-    <iframe src="{{ route('profile.menu_admin') }}"
+    <iframe src="{{ route('profile.admin.menu_admin') }}"
                 class="frame_menu"
                 frameborder="0"
         ></iframe>
     <center>
         <div class="wrapper">
-            <form class="form-floating" method="post" action="{{ route('profile.add_stud_bd') }}">
+            <form class="form-floating" method="post" action="{{ route('profile.admin.add_stud_bd') }}">
                 @csrf
                 <ul>
                     @foreach($errors->all() as $msg_err)
